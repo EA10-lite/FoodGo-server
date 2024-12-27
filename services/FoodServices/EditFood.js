@@ -1,9 +1,11 @@
 const Food = require("../../models/food");
 
-exports.EditFood = async (restaurantId, data) => {
-    const food = await Food.findOneAndUpdate({
-        ...data,
-    });
+exports.EditFood = async (foodId, update) => {
+    const food = await Food.findOneAndUpdate(
+        { _id: foodId },
+        { update },
+        { new: true }
+    );
 
     return food;
 }

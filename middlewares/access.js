@@ -14,3 +14,10 @@ exports.is_user = (req, res, next) => {
 
     next();
 }
+
+exports.is_driver = (req, res, next) => {
+    const is_driver = req?.user?.is_driver;
+    if(!is_driver) return errorResponse(res, 403, "Forbidden Request!");
+
+    next();
+}
