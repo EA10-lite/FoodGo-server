@@ -1,7 +1,7 @@
 const { Schema, model, Types } = require("mongoose");
 
 const food = new Schema({
-    createdBy: { type: Types.ObjectId, ref: "restaurant" },
+    createdBy: { type: Types.ObjectId, ref: "Restaurant" },
     name: { type: String, minLength: 2, maxLength: 50, required: true, unique: true },
     price: { type: Number, min: 1, required: true },
     category: [{ type: String, ref: "Category" }],

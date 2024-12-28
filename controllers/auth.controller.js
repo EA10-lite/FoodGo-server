@@ -24,7 +24,7 @@ exports.login = async (req, res) => {
             return successResponse(res, 200, response);
         }
 
-        return errorResponse(res, 400, "Incorrect email or password!");
+        errorResponse(res, 400, "Incorrect email or password!");
     } catch (error) {
         errorResponse(res, 500, "Something failed");
     }
@@ -42,7 +42,7 @@ exports.forgotPassword = async (req, res) => {
             return successResponse(res, 200, response);
         }
 
-        return errorResponse(res, 400, "No registered account with this email!")
+        errorResponse(res, 400, "No registered account with this email!")
     } catch (error) {
         errorResponse(res, 500, "Something failed");
     }
@@ -55,10 +55,10 @@ exports.signupUser = async (req, res) => {
     try {
         const { email, name, phone, password } = req.body;
         if(await RestaurantExist({ email })) {
-            return errorResponse(res, 400, "Email already registered!")
+            errorResponse(res, 400, "Email already registered!")
         }
         if(await UserExist({ email })) {
-            return errorResponse(res, 400, "Email already registered!")
+            errorResponse(res, 400, "Email already registered!")
         }
 
         const response = await UserSignup({
@@ -77,10 +77,10 @@ exports.signupRestaurant = async (req, res) => {
     try {
         const { email, name, phone, password } = req.body;
         if(await RestaurantExist({ email })) {
-            return errorResponse(res, 400, "Email already registered!")
+            errorResponse(res, 400, "Email already registered!")
         }
         if(await UserExist({ email })) {
-            return errorResponse(res, 400, "Email already registered!")
+            errorResponse(res, 400, "Email already registered!")
         }
 
         const response = await RestaurantSignup({

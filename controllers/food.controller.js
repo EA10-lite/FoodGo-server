@@ -1,4 +1,3 @@
-const { errorResponse, successResponse } = require("../utils/responseHandler");
 const {
     GetAll,
     GetFood,
@@ -8,7 +7,8 @@ const {
     FoodExist,
 } = require("../services/FoodServices");
 
-const { RestaurantExist } = require("../services/RestaurantServices")
+const { RestaurantExist } = require("../services/RestaurantServices");
+const { errorResponse, successResponse } = require("../utils/responseHandler");
 
 exports.getAllFoods = async (req, res) => {
     try {
@@ -31,13 +31,17 @@ exports.getFood = async (req, res) => {
 
 exports.addFood = async (req, res) => {
     try {
-        const { restaurant } = req.user;
+        const { _id } = req.user;
 
-        if(!await RestaurantExist({ _id: restaurant._id })) {
-            return errorResponse(res, 404, "Restaurant not found!");
+        if(!await RestaurantExist({ _id })) {
+            errorResponse(res, 404, "Restaurant not found!");
         }
 
-        const response = await AddFood(req.body);
+        if(await FoodExist({ name: req.body.name })) {
+            errorResponse(res, 404, "Food already added!");
+        }
+
+        const response = await AddFood(_id, req.body);
         successResponse(res, 200, response);
     } catch (error) {
         errorResponse(res, 500, "Something failed");
@@ -46,17 +50,18 @@ exports.addFood = async (req, res) => {
 
 exports.updateFood = async (req, res) => {
     try {
-        const { restaurant } = req.user;
+        const { _id } = req.user;
+        const { id: foodId } = req.params;
 
-        if(!await RestaurantExist({ _id: restaurant._id })) {
-            return errorResponse(res, 404, "Restaurant not found!");
+        if(!await RestaurantExist({ _id: _id })) {
+            errorResponse(res, 404, "Restaurant not found!");
         }
 
-        if(!await FoodExist({ _id: req.params.id })) {
-            return errorResponse(res, 404, "Restaurant not found!");
+        if(!await FoodExist({ _id: foodId })) {
+            errorResponse(res, 404, "Restaurant not found!");
         }
 
-        const response = await EditFood(req.body);
+        const response = await EditFood(foodId, _id, req.body);
         successResponse(res, 200, response);
     } catch (error) {
         errorResponse(res, 500, "Something failed");
@@ -69,11 +74,11 @@ exports.deleteFood = async (req, res) => {
         const { id } = req.params;
 
         if(!await RestaurantExist({ _id: restaurant._id })) {
-            return errorResponse(res, 404, "Restaurant not found!");
+            errorResponse(res, 404, "Restaurant not found!");
         }
 
         if(!await FoodExist({ _id: id })) {
-            return errorResponse(res, 404, "Restaurant not found!");
+            errorResponse(res, 404, "Restaurant not found!");
         }
 
         const response = await DeleteFood(id, restaurant._id);

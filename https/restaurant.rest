@@ -1,0 +1,32 @@
+# GET http://localhost:4000/api/restaurant/
+# Content-Type: application/json
+# x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmMTFjOTAyNTMxODg0NjAwNmFlMGIiLCJuYW1lIjoiRW1tYW51ZWwgQW55aWdvciIsImlzX3Jlc3RhdXJhbnQiOnRydWUsImlzX2VtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzM1MzMzMDI4LCJleHAiOjE3MzU0MTk0Mjh9.5k-1NJtSbeqgPitfQ9jKabhYqPHzGoHSW4l3V_s_6zk
+
+GET http://localhost:4000/api/restaurant/676f11c9025318846006ae0b
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmMTFjOTAyNTMxODg0NjAwNmFlMGIiLCJuYW1lIjoiRW1tYW51ZWwgQW55aWdvciIsImlzX3Jlc3RhdXJhbnQiOnRydWUsImlzX2VtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzM1MzMzMDI4LCJleHAiOjE3MzU0MTk0Mjh9.5k-1NJtSbeqgPitfQ9jKabhYqPHzGoHSW4l3V_s_6zk
+
+
+# POST http://localhost:4000/api/restaurant
+# Content-Type: application/json
+# x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmMTFjOTAyNTMxODg0NjAwNmFlMGIiLCJuYW1lIjoiRW1tYW51ZWwgQW55aWdvciIsImlzX3Jlc3RhdXJhbnQiOnRydWUsImlzX2VtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzM1MzMzMDI4LCJleHAiOjE3MzU0MTk0Mjh9.5k-1NJtSbeqgPitfQ9jKabhYqPHzGoHSW4l3V_s_6zk
+
+# {
+#     "price": 10,
+#     "name": "Jollof Rice",
+#     "ingredients": ["rice", "pepper", "tomato", "curry", "time"],
+#     "category": ["Rice", "Chicken"],
+#     "pictures": ["https://picture.rice.com"]
+# }
+
+# POST http://localhost:4000/api/restaurant
+# Content-Type: application/json
+# x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmMTFjOTAyNTMxODg0NjAwNmFlMGIiLCJuYW1lIjoiRW1tYW51ZWwgQW55aWdvciIsImlzX3Jlc3RhdXJhbnQiOnRydWUsImlzX2VtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzM1MzMzMDI4LCJleHAiOjE3MzU0MTk0Mjh9.5k-1NJtSbeqgPitfQ9jKabhYqPHzGoHSW4l3V_s_6zk
+
+# {
+#     "price": 10,
+#     "name": "Jollof Rice And Chicken",
+#     "ingredients": ["rice", "pepper", "tomato", "curry", "time"],
+#     "category": ["Rice", "Chicken"],
+#     "pictures": ["https://picture.rice.com"]
+# }

@@ -17,10 +17,32 @@
 #   "phone": "+2347061326122"
 # }
 
-POST http://localhost:4000/api/auth/login
-Content-Type: application/json
 
-{
-  "email": "emanuel@gmail.com",
-  "password": "Laca1234@#$&"
-}
+# POST http://localhost:4000/api/auth/login
+# Content-Type: application/json
+
+# {
+#   "email": "email@gmail.com",
+#   "password": "Laca1234@#$&"
+# }
+
+GET http://localhost:4000/api/user/
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmMTAyZTEzZDUyY2NjYzZlZDczNDUiLCJuYW1lIjoiRW1tYW51ZWwgQW55aWdvciIsImlzX3VzZXIiOnRydWUsImlzX2VtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzM1NDIzMTkwLCJleHAiOjE3MzU1MDk1OTB9.TGCpk-W-6iI0m8EshNfDZOVzLU_j2C7PV_Z5hYTg5S8
+
+# PUT http://localhost:4000/api/user/
+# Content-Type: application/json
+# x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZmMTAyZTEzZDUyY2NjYzZlZDczNDUiLCJuYW1lIjoiRW1tYW51ZWwgQW55aWdvciIsImlzX3VzZXIiOnRydWUsImlzX2VtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaWF0IjoxNzM1NDIzMTkwLCJleHAiOjE3MzU1MDk1OTB9.TGCpk-W-6iI0m8EshNfDZOVzLU_j2C7PV_Z5hYTg5S8
+
+# {
+#   "name": "Anyigor",
+#   "state": "Lagos",
+#   "email": "email@gmail.com",
+#   "phone": "07088945911",
+#   "about": "Certified Hacker",
+#   "city": "Ikorodu",
+#   "street": "Shakiru Yusuf Street",
+#   "zipcode": 102321,
+#   "longitude": 12.8503505,
+#   "latitude": 18.2895
+# }

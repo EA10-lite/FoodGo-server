@@ -20,15 +20,15 @@ require("./launch/swagger")(app);
 app.use((err, req, res, next) => {
     // if (err instanceof multer.MulterError) {
     if (err) {
-      return errorResponse(res, 418, `${err.message}: ${err.field}`);
+      errorResponse(res, 418, `${err.message}: ${err.field}`);
     } else {
-      return errorResponse(res, 500, err.message);
+      errorResponse(res, 500, err.message);
     }
 });
 
 
 app.use("*", (req, res) => {
-    return errorResponse(res, 404, {
+    errorResponse(res, 404, {
       message: "path not found",
       method: req.method,
       path: req.originalUrl,
