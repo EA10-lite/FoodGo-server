@@ -14,7 +14,7 @@ exports.getRestaurants = async (req, res) => {
         const response = await GetRestaurants();
         successResponse(res, 200, response);
     } catch (error) {
-        errorResponse(res, 500 , error.message);
+        return errorResponse(res, 500 , error.message);
     }
 }
 exports.getRestaurant = async (req, res) => {
@@ -22,12 +22,12 @@ exports.getRestaurant = async (req, res) => {
         const _id = req.params.id
 
         if(!await RestaurantExist({ _id })) {
-            errorResponse(res, 400, "Restaurant not found!");
+            return errorResponse(res, 400, "Restaurant not found!");
         }
         const response = await GetRestaurant(_id);
         successResponse(res, 200, response);
     } catch (error) {
-        errorResponse(res, 500 , error.message);
+        return errorResponse(res, 500 , error.message);
     }
 }
 exports.updateRestaurant = async (req, res) => {}

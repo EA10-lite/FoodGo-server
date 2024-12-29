@@ -1,5 +1,5 @@
 exports.errorResponse = (res, statusCode = 500, error) => {
-    return res.status(statusCode).json({
+    res.status(statusCode).json({
       success: false,
       message: error,
       result: {}

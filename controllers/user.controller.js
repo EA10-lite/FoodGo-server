@@ -13,13 +13,13 @@ exports.getMyProfile = async (req, res) => {
         const { _id } = req.user;
 
         if(!await UserExist({ _id })) {
-            errorResponse(res, 403, "Permission denied!");
+            return errorResponse(res, 403, "Permission denied!");
         }
 
         const response = await GetMyProfile(_id);
         successResponse(res, 200, response);
     } catch (error) {
-        errorResponse(res, 500, "Something failed");
+        return errorResponse(res, 500, "Something failed");
     }
 }
 
@@ -41,7 +41,7 @@ exports.updateProfile = async (req, res) => {
         } = req.body;
 
         if(!await UserExist({ _id })) {
-            errorResponse(res, 403, "Permission denied!");
+            return errorResponse(res, 403, "Permission denied!");
         }
 
         const update = {};
@@ -70,7 +70,7 @@ exports.updateProfile = async (req, res) => {
         const response = await UpdateUser(_id, update);
         successResponse(res, 200, response);
     } catch (error) {
-        errorResponse(res, 500, "Something failed");
+        return errorResponse(res, 500, "Something failed");
     }
 }
 
@@ -79,12 +79,12 @@ exports.deleteMyAccount = async (req, res) => {
         const { _id } = req.user;
 
         if(!await UserExist({ _id })) {
-            errorResponse(res, 403, "Permission denied!");
+            return errorResponse(res, 403, "Permission denied!");
         }
 
         const response = await DeleteAccount(_id);
         successResponse(res, 200, response);
     } catch (error) {
-        errorResponse(res, 500, "Something failed");
+        return errorResponse(res, 500, "Something failed");
     }
 }

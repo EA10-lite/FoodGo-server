@@ -20,13 +20,13 @@ exports.getOrders = async (req, res) => {
         const { _id } = req.user;
         
         if(!await RestaurantExist({ _id })) {
-            errorResponse(res, 400, "Invalid Request Permissions!")
+            return errorResponse(res, 400, "Invalid Request Permissions!")
         }
 
         const response = await GetOrders(_id);
         successResponse(res, 200, response); 
     } catch (error) {
-        errorResponse(res, 500, "Something failed");
+        return errorResponse(res, 500, "Something failed");
     }
 };
 
@@ -35,17 +35,17 @@ exports.getOrder = async (req, res) => {
         const { _id } = req.user;
         
         if(!await RestaurantExist({ _id })) {
-            errorResponse(res, 400, "Invalid Request Permissions!")
+            return errorResponse(res, 400, "Invalid Request Permissions!")
         }
 
         if(!await OrderExist({ _id: req.params.id })) {
-            errorResponse(res, 400, "Order not found")
+            return errorResponse(res, 400, "Order not found")
         }
 
         const response = await GetOrder(req.params.id, _id);
         successResponse(res, 200, response); 
     } catch (error) {
-        errorResponse(res, 500, "Something failed");
+        return errorResponse(res, 500, "Something failed");
     }
 };
 exports.createOrder = async (req, res) => {};
