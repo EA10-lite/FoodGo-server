@@ -20,6 +20,7 @@ exports.loginUser = async (req, res) => {
         }
         
         const response = await UserLogin(email, password);
+        console.log("Response: ", response);
         successResponse(res, 200, response);
     } catch (error) {
         return errorResponse(res, 500, "Something failed");
@@ -33,6 +34,7 @@ exports.loginRestaurant = async (req, res) => {
             return errorResponse(res, 400, "Incorrect email or password!");
         }
         const response = await RestaurantLogin(email, password);
+        console.log("Response: ", response);
         successResponse(res, 200, response);
     } catch (error) {
         return errorResponse(res, 500, "Something failed");
