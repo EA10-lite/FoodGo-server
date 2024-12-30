@@ -9,3 +9,13 @@ exports.GetOrders = async (restaurantId) => {
 
     return order;
 };
+
+exports.GetUserOrders = async (userId) => {
+    const order = await Order
+        .find({ userId })
+        .select("-password -services -rates")
+        .populate("foodId", "name price pictures")
+        .populate("userId", "name picture phone email")
+
+    return order;
+};

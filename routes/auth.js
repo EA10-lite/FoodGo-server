@@ -9,7 +9,8 @@ const {
 } = require("../schemas/auth");
 
 const {
-    login,
+    loginUser,
+    loginRestaurant,
     forgotPassword,
     resetPassword,
     verifyEmail,
@@ -17,7 +18,8 @@ const {
     signupRestaurant
 } = require("../controllers/auth.controller")
 
-router.post("/login", [validator(login_schema)], login);
+router.post("/loginUser", [validator(login_schema)], loginUser);
+router.post("/loginRestaurant", [validator(login_schema)], loginRestaurant);
 router.post("/signupUser", [validator(signup_schema)], signupUser);
 router.post("/signupRestaurant", [validator(signup_schema)], signupRestaurant);
 router.post("/forgotPassword", validator(forgot_password), forgotPassword);

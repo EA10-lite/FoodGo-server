@@ -30,4 +30,4 @@ const user = new Schema({
     verification_code_expires: { type: Date, default: null },
 }, { timestamps: true });
 
-module.exports = model("user", user);
+module.exports = model("User", user);

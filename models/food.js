@@ -18,4 +18,4 @@ const food = new Schema({
     }],
 }, { timestamps: true });
 
-module.exports = model("food", food);
+module.exports = model("Food", food);

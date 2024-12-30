@@ -12,19 +12,28 @@ const {
 const { errorResponse, successResponse } = require("../utils/responseHandler");
 
 
-exports.login = async (req, res) => {
+exports.loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
-        if(await RestaurantExist({ email })) {
-            const response = await RestaurantLogin(email, password);
-            return successResponse(res, 200, response);
+        if(!await UserExist({ email })) {
+            return errorResponse(res, 400, "Incorrect email or password!");
         }
-        if(await UserExist({ email })) {
-            const response = await UserLogin(email, password);
-            return successResponse(res, 200, response);
-        }
+        
+        const response = await UserLogin(email, password);
+        successResponse(res, 200, response);
+    } catch (error) {
+        return errorResponse(res, 500, "Something failed");
+    }
+};
 
-        return errorResponse(res, 400, "Incorrect email or password!");
+exports.loginRestaurant = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        if(!await RestaurantExist({ email })) {
+            return errorResponse(res, 400, "Incorrect email or password!");
+        }
+        const response = await RestaurantLogin(email, password);
+        successResponse(res, 200, response);
     } catch (error) {
         return errorResponse(res, 500, "Something failed");
     }

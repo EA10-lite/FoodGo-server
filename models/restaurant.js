@@ -32,4 +32,4 @@ const restaurant = new Schema({
     verification_code_expires: { type: Date, default: null },
 }, { timestamps: true });
 
-module.exports = model("restaurant", restaurant);
+module.exports = model("Restaurant", restaurant);

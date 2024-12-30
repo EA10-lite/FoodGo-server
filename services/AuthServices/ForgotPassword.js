@@ -15,7 +15,7 @@ exports.UserForgotPassword = async (email) => {
   user.verification_code = code;
   user.verification_code_expires = addMinutes(Date.now(), 15);
 
-  const newUser = await User.save();
+  const newUser = await user.save();
 
   SendEmailFromTemplate({
     template: "reset-password",
@@ -33,7 +33,7 @@ exports.DriverForgotPassword = async (email) => {
   driver.verification_code = code;
   driver.verification_code_expires = addMinutes(Date.now(), 15);
 
-  const newDriver = await Driver.save();
+  const newDriver = await driver.save();
 
   SendEmailFromTemplate({
     template: "reset-password",
@@ -52,7 +52,7 @@ exports.RestaurantForgotPassword = async (email) => {
   restaurant.verification_code = code;
   restaurant.verification_code_expires = addMinutes(Date.now(), 15);
 
-  const newRestaurant = await Restaurant.save();
+  const newRestaurant = await restaurant.save();
 
   SendEmailFromTemplate({
     template: "reset-password",

@@ -7,24 +7,24 @@
 #   "name": "Emmanuel Anyigor",
 #   "phone": "+2347061326122"
 # }
-POST http://localhost:4000/api/auth/signupUser
-Content-Type: application/json
-
-{
-  "email": "email@gmail.com",
-  "password": "Laca1234@#$&",
-  "name": "Emmanuel Anyigor",
-  "phone": "+2347061326122"
-}
-
-
-# POST http://localhost:4000/api/auth/login
+# POST http://localhost:4000/api/auth/signupUser
 # Content-Type: application/json
 
 # {
 #   "email": "email@gmail.com",
-#   "password": "Laca1234@#$&"
+#   "password": "Laca1234@#$&",
+#   "name": "Emmanuel Anyigor",
+#   "phone": "+2347061326122"
 # }
+
+
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "email@gmail.com",
+  "password": "Laca1234@#$&"
+}
 
 # GET http://localhost:4000/api/user/
 # Content-Type: application/json

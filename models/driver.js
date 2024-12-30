@@ -24,4 +24,4 @@ const driver = new Schema({
     },
 }, { timestamps: true });
 
-module.exports = model("driver", driver);
+module.exports = model("Driver", driver);

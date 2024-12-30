@@ -1,17 +1,18 @@
 const { CreateOrder } = require("./CreateOrder");
 const { EditOrder } = require("./EditOrder");
-const { DeleteOrder } = require("./DeleteOrder");
+const { CancelOrder } = require("./CancelOrder");
 const { GetOrder } = require("./GetOrder");
-const { GetOrders } = require("./GetOrders");
+const { GetOrders, GetUserOrders } = require("./GetOrders");
 const { UpdateOrder } = require("./UpdateOrder");
 const { OrderExist } = require("./OrderExist");
 
 module.exports = {
     CreateOrder,
     EditOrder,
-    DeleteOrder,
+    CancelOrder,
     GetOrder,
     GetOrders,
+    GetUserOrders,
     UpdateOrder,
     OrderExist,
 }
