@@ -22,6 +22,10 @@ exports.getAllFoods = async (req, res) => {
 exports.getFood = async (req, res) => {
     try {
         const { id } = req.params;
+        if(!await FoodExist({ _id: id })) {
+            return errorResponse(res, 404, "Food not found");
+        }
+        
         const response = await GetFood(id);
         successResponse(res, 200, response);
     } catch (error) {
