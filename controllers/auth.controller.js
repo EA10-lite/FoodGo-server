@@ -15,6 +15,7 @@ const { errorResponse, successResponse } = require("../utils/responseHandler");
 exports.loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
+        console.log('starting', req.body);
         if(!await UserExist({ email })) {
             return errorResponse(res, 400, "Incorrect email or password!");
         }
@@ -23,6 +24,7 @@ exports.loginUser = async (req, res) => {
         console.log("Response: ", response);
         successResponse(res, 200, response);
     } catch (error) {
+        console.log("error", error);
         return errorResponse(res, 500, "Something failed");
     }
 };
@@ -30,6 +32,7 @@ exports.loginUser = async (req, res) => {
 exports.loginRestaurant = async (req, res) => {
     try {
         const { email, password } = req.body;
+        console.log('starting', req.body);
         if(!await RestaurantExist({ email })) {
             return errorResponse(res, 400, "Incorrect email or password!");
         }
@@ -37,6 +40,7 @@ exports.loginRestaurant = async (req, res) => {
         console.log("Response: ", response);
         successResponse(res, 200, response);
     } catch (error) {
+        console.log("error", error);
         return errorResponse(res, 500, "Something failed");
     }
 };
