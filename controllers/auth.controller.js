@@ -88,6 +88,9 @@ exports.signupRestaurant = async (req, res) => {
         if(await RestaurantExist({ email })) {
             return errorResponse(res, 400, "Email already registered!")
         }
+        if(await RestaurantExist({ name })) {
+            return errorResponse(res, 400, "Restaurant name already used!")
+        }
         if(await UserExist({ email })) {
             return errorResponse(res, 400, "Email already registered!")
         }

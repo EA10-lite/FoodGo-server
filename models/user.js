@@ -1,9 +1,9 @@
 const { Schema, model } = require("mongoose");
 
 const user = new Schema({
-    name: { type: String, minLength: 2, maxLength: 50, required: true, unique: true },
+    name: { type: String, minLength: 2, maxLength: 50, required: true },
     phone: { type: String, minLength: 5, maxLength: 20, required: true },
-    email: { type: String, minLength: 5, maxLength: 100, required: true },
+    email: { type: String, minLength: 5, maxLength: 100, required: true, unique: true },
     password: { type: String, minLength: 8, maxLength: 1024, required: true },
     about: { type: String, minLength: 50, maxLength: 1000 },
     address: {
