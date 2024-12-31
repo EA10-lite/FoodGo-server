@@ -27,7 +27,7 @@ const {
 
 /**
  * @swagger
- * /loginUser:
+ * /api/auth/loginUser:
  *   post:
  *     tags:
  *       - Auth
@@ -60,7 +60,7 @@ router.post("/loginUser", [validator(login_schema)], loginUser);
 
 /**
  * @swagger
- * /loginRestaurant:
+ * /api/auth/loginRestaurant:
  *   post:
  *     tags:
  *       - Auth
@@ -93,7 +93,7 @@ router.post("/loginRestaurant", [validator(login_schema)], loginRestaurant);
 
 /**
  * @swagger
- * /signupUser:
+ * /api/auth/signupUser:
  *   post:
  *     tags:
  *       - Auth
@@ -116,7 +116,7 @@ router.post("/signupUser", [validator(signup_schema)], signupUser);
 
 /**
  * @swagger
- * /signupRestaurant:
+ * /api/auth/signupRestaurant:
  *   post:
  *     tags:
  *       - Auth
@@ -139,7 +139,7 @@ router.post("/signupRestaurant", [validator(signup_schema)], signupRestaurant);
 
 /**
  * @swagger
- * /forgotPassword:
+ * /api/auth/forgotPassword:
  *   post:
  *     tags:
  *       - Auth
@@ -166,7 +166,7 @@ router.post("/forgotPassword", validator(forgot_password), forgotPassword);
 
 /**
  * @swagger
- * /resetPassword:
+ * /api/auth/resetPassword:
  *   post:
  *     tags:
  *       - Auth
@@ -202,7 +202,7 @@ router.post("/resetPassword", [validator(reset_password)], resetPassword);
 
 /**
  * @swagger
- * /verifyEmail:
+ * /api/auth/verifyEmail:
  *   post:
  *     tags:
  *       - Auth
@@ -234,13 +234,13 @@ module.exports = router;
 
 
 
-// router.post("/loginUser", [validator(login_schema)], loginUser);
-// router.post("/loginRestaurant", [validator(login_schema)], loginRestaurant);
-// router.post("/signupUser", [validator(signup_schema)], signupUser);
-// router.post("/signupRestaurant", [validator(signup_schema)], signupRestaurant);
-// router.post("/forgotPassword", validator(forgot_password), forgotPassword);
-// router.post("/resetPassword", [validator(reset_password)], resetPassword);
-// router.post("/verifyEmail", [validator(verfiy_email)], verifyEmail);
+router.post("/loginUser", [validator(login_schema)], loginUser);
+router.post("/loginRestaurant", [validator(login_schema)], loginRestaurant);
+router.post("/signupUser", [validator(signup_schema)], signupUser);
+router.post("/signupRestaurant", [validator(signup_schema)], signupRestaurant);
+router.post("/forgotPassword", validator(forgot_password), forgotPassword);
+router.post("/resetPassword", [validator(reset_password)], resetPassword);
+router.post("/verifyEmail", [validator(verfiy_email)], verifyEmail);
 
 
 module.exports = router;
