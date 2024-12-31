@@ -214,3 +214,9 @@
   label: 'winston custom format',
   timestamp: 'Dec-31-2024 11:43:49'
 }
+{
+  level: 'info',
+  message: 'listening for requests at port',
+  label: 'winston custom format',
+  timestamp: 'Dec-31-2024 11:44:16'
+}
