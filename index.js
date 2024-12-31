@@ -2,7 +2,7 @@ require("dotenv").config();
 require("express-async-errors");
 const { errorResponse } = require("./utils/responseHandler");
 
-const { logger } = require("./utils/transport");
+const logger = require("./utils/logger");
 
 const bodyParser = require("body-parser");
 const express = require("express");
