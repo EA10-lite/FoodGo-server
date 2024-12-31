@@ -17,9 +17,9 @@ exports.UserForgotPassword = async (email) => {
 
   const newUser = await user.save();
 
-  SendEmailFromTemplate({
+  await SendEmailFromTemplate({
     template: "reset-password",
-    locals: { code },
+    locals: { code, email },
     to: user.email,
   });
 
@@ -35,9 +35,9 @@ exports.DriverForgotPassword = async (email) => {
 
   const newDriver = await driver.save();
 
-  SendEmailFromTemplate({
+  await SendEmailFromTemplate({
     template: "reset-password",
-    locals: { code },
+    locals: { code, email },
     to: driver.email,
   });
 
@@ -54,9 +54,9 @@ exports.RestaurantForgotPassword = async (email) => {
 
   const newRestaurant = await restaurant.save();
 
-  SendEmailFromTemplate({
+  await SendEmailFromTemplate({
     template: "reset-password",
-    locals: { code },
+    locals: { code, email },
     to: restaurant.email,
   });
 

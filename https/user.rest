@@ -1,12 +1,36 @@
-POST http://localhost:4000/api/auth/signupRestaurant
+POST http://localhost:4000/api/auth/verifyEmail
 Content-Type: application/json
 
 {
-  "email": "emanuel@gmail.com",
-  "password": "Laca1234@#$&",
-  "name": "Emmanuel Anyigor2",
-  "phone": "+2347061326122"
+  "email": "emanuelanyigor@gmail.com",
+  "code": "7377"
 }
+# POST http://localhost:4000/api/auth/ResetPassword
+# Content-Type: application/json
+
+# {
+#   "email": "emanuelanyigor@gmail.com",
+#   "password": "Test@123",
+#   "code": "0848"
+# }
+
+
+# POST http://localhost:4000/api/auth/forgotPassword
+# Content-Type: application/json
+
+# {
+#   "email": "emanuelanyigor@gmail.com"
+# }
+
+# POST http://localhost:4000/api/auth/signupRestaurant
+# Content-Type: application/json
+
+# {
+#   "email": "emanuelanyigor@gmail.com",
+#   "password": "Laca1234@#$&",
+#   "name": "Emmanuel Anyigor2",
+#   "phone": "+2347061326122"
+# }
 # POST http://localhost:4000/api/auth/signupUser
 # Content-Type: application/json
 

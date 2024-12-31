@@ -9,12 +9,14 @@ exports.forgot_password = {
 }
 
 exports.reset_password = {
+    code: joi.string().min(4).max(4).required("4-digit verification code is required"),
+    email: joi.string().email().required(),
     password: joi.string().min(8).max(1024).required(),
-    new_password: joi.string().min(8).max(1024).required()
 }
 
 exports.verify_email = {
-    code: joi.number().min(4).max(4).required(),
+    code: joi.string().min(4).max(4).required("4-digit verification code is required"),
+    email: joi.string().email().required(),
 }
 
 exports.signup_schema = {

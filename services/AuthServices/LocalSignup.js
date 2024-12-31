@@ -37,11 +37,11 @@ exports.UserSignup = async ({
     is_email_verified: user.is_email_verified,
   });
 
-  // await SendEmailFromTemplate({
-  //   template: "email-verification",
-  //   to: email,
-  //   locals: { link: verification_code, name: name, email: email },
-  // });
+  await SendEmailFromTemplate({
+    template: "email-verification",
+    to: email,
+    locals: { link: verification_code, name: name, email: email },
+  });
 
   return { user: userWithToken };
 };
@@ -110,11 +110,11 @@ exports.RestaurantSignup = async ({
     is_email_verified: restaurant.is_email_verified,
   });
 
-  // await SendEmailFromTemplate({
-  //   template: "email-verification",
-  //   to: email,
-  //   locals: { code: verification_code, name: name, email: email },
-  // });
+  await SendEmailFromTemplate({
+    template: "email-verification",
+    to: email,
+    locals: { code: verification_code, name: name, email: email },
+  });
 
   return { restaurant: restaurantWithToken };
 };

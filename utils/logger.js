@@ -25,15 +25,15 @@ const logger = createLogger({
     ),
     transports: [
         fileRotateTransport,
-        new transports.File({ filename: 'logs/error.log', level: 'error' }),
-        new transports.File({ filename: 'logs/info.log', level: 'info' }),
+        new transports.File({ filename: 'logs-info/error.log', level: 'error' }),
+        new transports.File({ filename: 'logs-info/info.log', level: 'info' }),
         new transports.MongoDB({ db: 'mongodb://localhost/instagram', level: 'error' }),
     ],
     rejectionHandlers: [
-        new transports.File({ filename: 'logs/rejections.log' })
+        new transports.File({ filename: 'logs-info/rejections.log' })
     ],
     exceptionHandlers: [
-        new transports.File({ filename: 'logs/exceptions.log' })
+        new transports.File({ filename: 'logs-info/exceptions.log' })
     ],
     exitOnError: false
 })

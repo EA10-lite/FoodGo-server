@@ -4,9 +4,13 @@ const {
     RestaurantLogin,
     RestaurantSignup,
     RestaurantForgotPassword,
+    RestaurantResetPassword,
+    RestaurantVerifyEmail,
     UserLogin,
     UserSignup,
     UserForgotPassword,
+    UserResetPassword,
+    UserVerifyEmail,
 } = require("../services/AuthServices");
 
 const { errorResponse, successResponse } = require("../utils/responseHandler");
@@ -55,10 +59,43 @@ exports.forgotPassword = async (req, res) => {
     } catch (error) {
         return errorResponse(res, 500, "Something failed");
     }
-}
+};
 
-exports.resetPassword = async (req, res) => {}
-exports.verifyEmail = async (req, res) => {}
+exports.resetPassword = async (req, res) => {
+    try {
+        const { email, code, password } = req.body;
+        if(await RestaurantExist({ email })) {
+            const response = await RestaurantResetPassword(email, code, password);
+            return successResponse(res, 200, response);
+        }
+        if(await UserExist({ email })) {
+            const response = await UserResetPassword(email, code, password);
+            return successResponse(res, 200, response);
+        }
+
+        return errorResponse(res, 400, "No registered account with this email!")
+    } catch (error) {
+        return errorResponse(res, error?.status || 500, error?.message || "something failed");
+    }
+};
+
+exports.verifyEmail = async (req, res) => {
+    try {
+        const { email, code } = req.body;
+        if(await RestaurantExist({ email })) {
+            const response = await RestaurantVerifyEmail(email, code);
+            return successResponse(res, 200, response);
+        }
+        if(await UserExist({ email })) {
+            const response = await UserVerifyEmail(email, code);
+            return successResponse(res, 200, response);
+        }
+
+        return errorResponse(res, 400, "No registered account with this email!")
+    } catch (error) {
+        return errorResponse(res, error?.status || 500, error?.message || "something failed");
+    }
+}
 
 exports.signupUser = async (req, res) => {
     try {
