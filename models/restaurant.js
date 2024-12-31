@@ -14,7 +14,6 @@ const restaurant = new Schema({
         zipcode: { type: Number },
     },
     about: { type: String, minLength: 50, maxLength: 1000 },
-    rating: { type: Number, min: 1, max: 5 },
     pictures: [{
         type: String,
         validate: {

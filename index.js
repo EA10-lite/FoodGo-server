@@ -2,6 +2,8 @@ require("dotenv").config();
 require("express-async-errors");
 const { errorResponse } = require("./utils/responseHandler");
 
+const { logger } = require("./utils/transport");
+
 const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
@@ -38,5 +40,5 @@ app.use("*", (req, res) => {
 
 const PORT = process.env.PORT 
 app.listen(PORT, () => {
-    console.log("Now listening for requests at port", PORT);
+    logger.info("listening for requests at port", PORT);
 });
