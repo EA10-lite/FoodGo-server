@@ -27,6 +27,63 @@ const {
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       properties:
+ *         name:
+ *             type: string
+ *             minLength: 4
+ *             maxLength: 50
+ *         phone:
+ *             type: string
+ *             minLength: 4
+ *             maxLength: 12
+ *         password:
+ *             type: string
+ *             minLength: 8
+ *             pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
+ *         email:
+ *             type: string
+ *             format: email
+ *       required:
+ *         - name
+ *         - phone
+ *         - password
+ *         - email
+ */
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Restaurant:
+ *       type: object
+ *       properties:
+ *         name:
+ *             type: string
+ *             minLength: 4
+ *             maxLength: 50
+ *         phone:
+ *             type: string
+ *             minLength: 4
+ *             maxLength: 12
+ *         password:
+ *             type: string
+ *             minLength: 8
+ *             pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
+ *         email:
+ *             type: string
+ *             format: email
+ *       required:
+ *         - name
+ *         - phone
+ *         - password
+ *         - email
+ */
+
+/**
+ * @swagger
  * /api/auth/loginUser:
  *   post:
  *     tags:
@@ -103,7 +160,7 @@ router.post("/loginRestaurant", [validator(login_schema)], loginRestaurant);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *            $ref: '#/components/schemas/User'
  *     responses:
  *       201:
  *         description: User successfully registered
@@ -126,13 +183,13 @@ router.post("/signupUser", [validator(signup_schema)], signupUser);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Restaurant'
+ *              $ref: '#/components/schemas/Restaurant'
  *     responses:
  *       201:
  *         description: Restaurant successfully registered
  *       400:
  *         description: Bad request
- *       409:
+ *       400:
  *         description: Email already exists
  */
 router.post("/signupRestaurant", [validator(signup_schema)], signupRestaurant);
