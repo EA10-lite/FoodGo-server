@@ -12,5 +12,8 @@ exports.profile_schema = {
     longitude: joi.number().required(),
     latitude: joi.number().required(),
 
+}
+
+exports.avatar = {
     picture: joi.string(),
 }

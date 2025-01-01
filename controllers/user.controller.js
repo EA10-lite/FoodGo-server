@@ -37,7 +37,6 @@ exports.updateProfile = async (req, res) => {
             zipcode,
             longitude,
             latitude,
-            picture,
         } = req.body;
 
         if(!await UserExist({ _id })) {
@@ -59,15 +58,24 @@ exports.updateProfile = async (req, res) => {
         if(latitude) address.latitude = latitude;
         update.address = address;
 
-        const user = await GetMyProfile(_id);
-        let avatar;
-        if(picture !== user.picture) {
-            avatar = await UploadUserAvatar(_id, picture);
+        const response = await UpdateUser(_id, update);
+        successResponse(res, 200, response);
+    } catch (error) {
+        return errorResponse(res, 500, "Something failed");
+    }
+}
+
+exports.uploadProfilePicture = async (req, res) => {
+    try {
+        const { _id } = req.user;
+        if(!await UserExist({ _id })) {
+            return errorResponse(res, 403, "Permission denied!");
         }
 
-        if(picture) update.picture = avatar ? avatar : picture;
-
-        const response = await UpdateUser(_id, update);
+        const { picture } = req.body;
+        const avatar = await UploadUserAvatar(_id, picture);
+        
+        const response = await UpdateUser(_id, { picture: avatar });
         successResponse(res, 200, response);
     } catch (error) {
         return errorResponse(res, 500, "Something failed");
