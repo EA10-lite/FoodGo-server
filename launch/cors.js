@@ -2,8 +2,8 @@
 const cors = require("cors");
 
 const cors_options = {
-    origin: ["http://localhost:3000", "http://localhost:3001"],
-    'Access-Control-Allow-Origin': 'http://localhost:3000/',
+    origin: ["http://localhost:3000", "http://localhost:3001", "https://food-go-lemon.vercel.appp"],
+    'Access-Control-Allow-Origin': 'https://food-go-lemon.vercel.app/',
     'Access-Control-Allow-Credentials': true,
     credentials: true,
 }

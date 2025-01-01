@@ -15,7 +15,8 @@ const {
     resetPassword,
     verifyEmail,
     signupUser,
-    signupRestaurant
+    signupRestaurant,
+    resendVerificationCode,
 } = require("../controllers/auth.controller")
 
 /**
@@ -286,5 +287,33 @@ router.post("/resetPassword", [validator(reset_password)], resetPassword);
  *         description: Invalid verification code
  */
 router.post("/verifyEmail", [validator(verify_email)], verifyEmail);
+
+
+/**
+ * @swagger
+ * /api/auth/resendVerificationCode:
+ *   post:
+ *     tags:
+ *       - Auth
+ *     summary: Resend verification code
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 format: email
+ *             required:
+ *               - email
+ *     responses:
+ *       200:
+ *         description: Verification code sent
+ *       400:
+ *         description: Email not registered
+ */
+router.post("/resendVerificationCode", [validator(forgot_password)], resendVerificationCode);
 
 module.exports = router;

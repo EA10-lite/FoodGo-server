@@ -6,11 +6,13 @@ const {
     RestaurantForgotPassword,
     RestaurantResetPassword,
     RestaurantVerifyEmail,
+    SendRestaurantEmailVerification,
     UserLogin,
     UserSignup,
     UserForgotPassword,
     UserResetPassword,
     UserVerifyEmail,
+    SendAUserEmailVerification,
 } = require("../services/AuthServices");
 
 const { errorResponse, successResponse } = require("../utils/responseHandler");
@@ -139,6 +141,24 @@ exports.signupRestaurant = async (req, res) => {
             password
         });
         successResponse(res, 200, response);
+    } catch (error) {
+        return errorResponse(res, 500, "Something failed");
+    }
+};
+
+exports.resendVerificationCode = async (req, res) => {
+    try {
+        const { email } = req.body;
+        if(await RestaurantExist({ email })) {
+            const response = await SendRestaurantEmailVerification(email);
+            return successResponse(res, 200, response);
+        }
+        if(await UserExist({ email })) {
+            const response = await SendAUserEmailVerification(email);
+            return successResponse(res, 200, response);
+        }
+
+        return errorResponse(res, 400, "No registered account with this email!")
     } catch (error) {
         return errorResponse(res, 500, "Something failed");
     }
