@@ -9,8 +9,6 @@ const user = new Schema({
     address: {
         state: { type: String },
         city: { type: String },
-        latitude: { type: Number },
-        longitude: { type: Number },
         street: { type: String },
         zipcode: { type: Number },
     },

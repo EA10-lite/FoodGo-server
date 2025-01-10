@@ -35,8 +35,6 @@ exports.updateProfile = async (req, res) => {
             street,
             city,
             zipcode,
-            longitude,
-            latitude,
         } = req.body;
 
         if(!await UserExist({ _id })) {
@@ -54,8 +52,6 @@ exports.updateProfile = async (req, res) => {
         if(street) address.street = street;
         if(city) address.city = city;
         if(zipcode) address.zipcode = zipcode;
-        if(longitude) address.longitude = longitude;
-        if(latitude) address.latitude = latitude;
         update.address = address;
 
         const response = await UpdateUser(_id, update);

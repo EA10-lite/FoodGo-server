@@ -9,8 +9,6 @@ exports.profile_schema = {
     city: joi.string().required(),
     street: joi.string().required(),
     zipcode: joi.number().required(),
-    longitude: joi.number().required(),
-    latitude: joi.number().required(),
 
 }
 
