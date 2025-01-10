@@ -1636,3 +1636,549 @@
   label: 'winston custom format',
   timestamp: 'Jan-01-2025 06:56:27'
 }
+{
+  error: Error: Cannot find module '../MailService'
+  Require stack:
+  - C:\Users\Chris\Desktop\FoodGo\services\AuthServices\SendEmailVerification.js
+  - C:\Users\Chris\Desktop\FoodGo\services\AuthServices\index.js
+  - C:\Users\Chris\Desktop\FoodGo\controllers\auth.controller.js
+  - C:\Users\Chris\Desktop\FoodGo\routes\auth.js
+  - C:\Users\Chris\Desktop\FoodGo\launch\routes.js
+  - C:\Users\Chris\Desktop\FoodGo\index.js
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+      at Module._load (node:internal/modules/cjs/loader:985:27)
+      at Module.require (node:internal/modules/cjs/loader:1235:19)
+      at require (node:internal/modules/helpers:176:18)
+      at Object.<anonymous> (C:\Users\Chris\Desktop\FoodGo\services\AuthServices\SendEmailVerification.js:6:35)
+      at Module._compile (node:internal/modules/cjs/loader:1376:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+      at Module.load (node:internal/modules/cjs/loader:1207:32)
+      at Module._load (node:internal/modules/cjs/loader:1023:12)
+      at Module.require (node:internal/modules/cjs/loader:1235:19) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\index.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    "Error: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:985:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js:6:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1207:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1023:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)',
+  stack: "Error: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:985:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js:6:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1207:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1023:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)',
+  exception: true,
+  date: 'Wed Jan 01 2025 07:00:50 GMT-0800 (Pacific Standard Time)',
+  process: {
+    pid: 2276,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Chris\\Desktop\\FoodGo',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\index.js',
+      'index.js'
+    ],
+    memoryUsage: {
+      rss: 106659840,
+      heapTotal: 73633792,
+      heapUsed: 53996360,
+      external: 20732566,
+      arrayBuffers: 18293563
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 488047.953 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._resolveFilename',
+      line: 1144,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 985,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1235,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 176,
+      method: null,
+      native: false
+    },
+    {
+      column: 35,
+      file: 'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js',
+      function: null,
+      line: 6,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1376,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1435,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1207,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1023,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1235,
+      method: 'require',
+      native: false
+    }
+  ],
+  label: 'winston custom format',
+  timestamp: 'Jan-01-2025 07:00:50'
+}
+{
+  error: Error: Cannot find module '../MailService'
+  Require stack:
+  - C:\Users\Chris\Desktop\FoodGo\services\AuthServices\SendEmailVerification.js
+  - C:\Users\Chris\Desktop\FoodGo\services\AuthServices\index.js
+  - C:\Users\Chris\Desktop\FoodGo\controllers\auth.controller.js
+  - C:\Users\Chris\Desktop\FoodGo\routes\auth.js
+  - C:\Users\Chris\Desktop\FoodGo\launch\routes.js
+  - C:\Users\Chris\Desktop\FoodGo\index.js
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+      at Module._load (node:internal/modules/cjs/loader:985:27)
+      at Module.require (node:internal/modules/cjs/loader:1235:19)
+      at require (node:internal/modules/helpers:176:18)
+      at Object.<anonymous> (C:\Users\Chris\Desktop\FoodGo\services\AuthServices\SendEmailVerification.js:6:35)
+      at Module._compile (node:internal/modules/cjs/loader:1376:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+      at Module.load (node:internal/modules/cjs/loader:1207:32)
+      at Module._load (node:internal/modules/cjs/loader:1023:12)
+      at Module.require (node:internal/modules/cjs/loader:1235:19) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\index.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    "Error: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:985:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js:6:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1207:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1023:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)',
+  stack: "Error: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:985:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js:6:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1207:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1023:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)',
+  exception: true,
+  date: 'Wed Jan 01 2025 07:00:59 GMT-0800 (Pacific Standard Time)',
+  process: {
+    pid: 11284,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Chris\\Desktop\\FoodGo',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\index.js',
+      'index.js'
+    ],
+    memoryUsage: {
+      rss: 106483712,
+      heapTotal: 73633792,
+      heapUsed: 53897832,
+      external: 20732566,
+      arrayBuffers: 18293563
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 488057.156 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._resolveFilename',
+      line: 1144,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 985,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1235,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 176,
+      method: null,
+      native: false
+    },
+    {
+      column: 35,
+      file: 'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js',
+      function: null,
+      line: 6,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1376,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1435,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1207,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1023,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1235,
+      method: 'require',
+      native: false
+    }
+  ],
+  label: 'winston custom format',
+  timestamp: 'Jan-01-2025 07:00:59'
+}
+{
+  error: Error: Cannot find module '../MailService'
+  Require stack:
+  - C:\Users\Chris\Desktop\FoodGo\services\AuthServices\SendEmailVerification.js
+  - C:\Users\Chris\Desktop\FoodGo\services\AuthServices\index.js
+  - C:\Users\Chris\Desktop\FoodGo\controllers\auth.controller.js
+  - C:\Users\Chris\Desktop\FoodGo\routes\auth.js
+  - C:\Users\Chris\Desktop\FoodGo\launch\routes.js
+  - C:\Users\Chris\Desktop\FoodGo\index.js
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)
+      at Module._load (node:internal/modules/cjs/loader:985:27)
+      at Module.require (node:internal/modules/cjs/loader:1235:19)
+      at require (node:internal/modules/helpers:176:18)
+      at Object.<anonymous> (C:\Users\Chris\Desktop\FoodGo\services\AuthServices\SendEmailVerification.js:6:35)
+      at Module._compile (node:internal/modules/cjs/loader:1376:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)
+      at Module.load (node:internal/modules/cjs/loader:1207:32)
+      at Module._load (node:internal/modules/cjs/loader:1023:12)
+      at Module.require (node:internal/modules/cjs/loader:1235:19) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\index.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    "Error: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:985:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js:6:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1207:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1023:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)',
+  stack: "Error: Cannot find module '../MailService'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\index.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\controllers\\auth.controller.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\routes\\auth.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\launch\\routes.js\n' +
+    '- C:\\Users\\Chris\\Desktop\\FoodGo\\index.js\n' +
+    '    at Module._resolveFilename (node:internal/modules/cjs/loader:1144:15)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:985:27)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)\n' +
+    '    at require (node:internal/modules/helpers:176:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js:6:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1207:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1023:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1235:19)',
+  exception: true,
+  date: 'Wed Jan 01 2025 07:05:43 GMT-0800 (Pacific Standard Time)',
+  process: {
+    pid: 13868,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Chris\\Desktop\\FoodGo',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.11.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Chris\\Desktop\\FoodGo\\index.js',
+      'index.js'
+    ],
+    memoryUsage: {
+      rss: 109711360,
+      heapTotal: 78614528,
+      heapUsed: 56560208,
+      external: 20732566,
+      arrayBuffers: 18293563
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 488341.484 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._resolveFilename',
+      line: 1144,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 985,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1235,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 176,
+      method: null,
+      native: false
+    },
+    {
+      column: 35,
+      file: 'C:\\Users\\Chris\\Desktop\\FoodGo\\services\\AuthServices\\SendEmailVerification.js',
+      function: null,
+      line: 6,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1376,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1435,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1207,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1023,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1235,
+      method: 'require',
+      native: false
+    }
+  ],
+  label: 'winston custom format',
+  timestamp: 'Jan-01-2025 07:05:43'
+}

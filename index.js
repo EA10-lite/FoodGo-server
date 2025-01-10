@@ -40,5 +40,6 @@ app.use("*", (req, res) => {
 
 const PORT = process.env.PORT 
 app.listen(PORT, () => {
-    logger.info("listening for requests at port", PORT);
+    console.log("listening for requests at port", PORT);
+    // logger.info("listening for requests at port", PORT);
 });
