@@ -3,7 +3,7 @@ const User = require("../../models/user");
 const Driver = require("../../models/driver");
 const Restaurant = require("../../models/restaurant");
 
-const { SendEmailFromTemplate } = require("../MailService");
+const { SendEmailFromTemplate } = require("../MailServices/SendEmailFromTemplate");
 const { addMinutes } = require("date-fns");
 
 exports.SendAUserEmailVerification = async (email) => {
