@@ -7,6 +7,10 @@ exports.searchAll = async (req, res) => {
     try {
         const { search } = req.query;
 
+        if(!search) {
+            return errorResponse(res, 400, "Please provide a valid search query!")
+        }
+
         const response = await SearchAll(search);
         successResponse(res, 200, response);
     } catch (error) {
