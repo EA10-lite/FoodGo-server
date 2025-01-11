@@ -8,7 +8,7 @@ const {
     getRestaurants,
     updateRestaurant,
     deleteRestaurant
-} = require("../controllers/restaurant.controller")
+} = require("../controllers/restaurant.controller");
 
 router.get("/", getRestaurants);
 router.get("/:id", getRestaurant);
