@@ -2,8 +2,6 @@ require("dotenv").config();
 require("express-async-errors");
 const { errorResponse } = require("./utils/responseHandler");
 
-const logger = require("./utils/logger");
-
 const bodyParser = require("body-parser");
 const express = require("express");
 const app = express();
@@ -14,7 +12,7 @@ app.use(bodyParser.text({ limit: '1000mb' }));
 
 require("./launch/cors")(app);
 require("./launch/config")();
-require("./launch/db")();
+require("./launch/db")(); 
 require("./launch/validator")();
 require("./launch/routes")(app);
 require("./launch/swagger")(app);
@@ -41,5 +39,4 @@ app.use("*", (req, res) => {
 const PORT = process.env.PORT 
 app.listen(PORT, () => {
     console.log("listening for requests at port", PORT);
-    logger.info("listening for requests at port", PORT);
 });
