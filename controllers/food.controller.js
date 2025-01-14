@@ -23,7 +23,7 @@ exports.getFood = async (req, res) => {
     try {
         const { id } = req.params;
         if(!await FoodExist({ _id: id })) {
-            return errorResponse(res, 404, "Food not found");
+            return errorResponse(res, 404, "Food not found!");
         }
         
         const response = await GetFood(id);

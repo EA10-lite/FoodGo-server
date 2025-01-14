@@ -5,7 +5,7 @@ const food = new Schema({
     name: { type: String, minLength: 2, maxLength: 50, required: true, unique: true },
     price: { type: Number, min: 1, required: true },
     category: [{ type: String, ref: "Category" }],
-    ingredients: [{ type: String, required: true }],
+    preparation_time: { type: Number },
     pictures: [{
         type: String,
         validate: {

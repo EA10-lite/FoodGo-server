@@ -55,16 +55,13 @@ exports.UploadFoodPictures = async (id, pictures) => {
     for (const file of pictures) {
         try {
             const response = await cloudinary.uploader.upload(file, {
-                folder: `Food/${food.isDirectModified}`,
+                folder: `Food/${food._id}`,
                 crop: "fill",
                 resource_type: "auto"
             });
 
 
-            const result = {
-                url: response.secure_url,
-                type: response?.resource_type
-            }
+            const result = response.secure_url;
 
             uploadedMedia.push(result);
         } catch (error) {

@@ -18,7 +18,6 @@ require("./launch/routes")(app);
 require("./launch/swagger")(app);
 
 app.use((err, req, res, next) => {
-    // if (err instanceof multer.MulterError) {
     if (err) {
       return errorResponse(res, 418, `${err.message}: ${err.field}`);
     } else {
