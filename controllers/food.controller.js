@@ -41,8 +41,8 @@ exports.addFood = async (req, res) => {
             return errorResponse(res, 404, "Restaurant not found!");
         }
 
-        if(await FoodExist({ name: req.body.name })) {
-            return errorResponse(res, 404, "Food already added!");
+        if(await FoodExist({ name: req.body.name, createdBy: _id })) {
+            return errorResponse(res, 400, "Food already added!");
         }
 
         const response = await AddFood(_id, req.body);
