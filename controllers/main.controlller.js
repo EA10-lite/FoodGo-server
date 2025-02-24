@@ -1,5 +1,5 @@
 
-const { SearchAll } = require("../services/MainServices");
+const { SearchAll, GetAllCategories } = require("../services/MainServices");
 const { errorResponse, successResponse } = require("../utils/responseHandler");
 
 
@@ -12,6 +12,15 @@ exports.searchAll = async (req, res) => {
         }
 
         const response = await SearchAll(search);
+        successResponse(res, 200, response);
+    } catch (error) {
+        return errorResponse(res, 500, "Something failed")
+    }
+}
+
+exports.getAllCategories = async (req, res) => {
+    try {
+        const response = await GetAllCategories();
         successResponse(res, 200, response);
     } catch (error) {
         return errorResponse(res, 500, "Something failed")
